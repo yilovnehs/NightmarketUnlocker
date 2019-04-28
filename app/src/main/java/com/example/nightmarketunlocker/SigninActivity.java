@@ -23,7 +23,7 @@ public class SigninActivity extends AppCompatActivity {
     SignInButton signInButton;
     //ignInButton.setSize(SignInButton.SIZE_STANDARD);
     GoogleSignInClient mGoogleSignInClient;
-    Button udButton = (Button) findViewById(R.id.usedirectly_button);
+    //Button udButton = (Button) findViewById(R.id.usedirectly_button);
 
 
     @Override
@@ -34,14 +34,15 @@ public class SigninActivity extends AppCompatActivity {
         //Initializing Views
         signInButton = findViewById(R.id.sign_in_button);
 
-        udButton.setOnClickListener(new View.OnClickListener(){
+        /*udButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v){
-                Intent intent = new Intent();
-                intent.setClass(SigninActivity.this, SearchActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent();
+                //intent.setClass(SigninActivity.this, SearchActivity.class);
+                //startActivity(intent);
+                startActivity(new Intent(SigninActivity.this, SearchActivity.class));
             }
-        });
+        });*/
 
 
         // Configure sign-in to request the user's ID, email address, and basic
@@ -83,7 +84,7 @@ public class SigninActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            startActivity(new Intent(SigninActivity.this, SettingActivity.class));
+            startActivity(new Intent(SigninActivity.this, SearchActivity.class));
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
@@ -98,7 +99,7 @@ public class SigninActivity extends AppCompatActivity {
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account != null) {
-            startActivity(new Intent(SigninActivity.this, SettingActivity.class));
+            startActivity(new Intent(SigninActivity.this, SearchActivity.class));
         }
         super.onStart();
     }

@@ -16,27 +16,27 @@ import java.util.ArrayList;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> {
     Context context;
-    ArrayList<String> fullNameList;
-    ArrayList<String> userNameList;
-    ArrayList<String> profilePicList;
+    ArrayList<String> foodNameList;
+    ArrayList<String> foodDescList;
+    ArrayList<String> foodImageList;
 
     class SearchViewHolder extends RecyclerView.ViewHolder {
-        ImageView profileImage;
-        TextView full_name, user_name;
+        ImageView foodimage;
+        TextView foodname, fooddesc;
 
         public SearchViewHolder(View itemView) {
             super(itemView);
-            profileImage = (ImageView) itemView.findViewById(R.id.profileImage);
-            full_name = (TextView) itemView.findViewById(R.id.full_name);
-            user_name = (TextView) itemView.findViewById(R.id.user_name);
+            foodimage = (ImageView) itemView.findViewById(R.id.foodimage);
+            foodname = (TextView) itemView.findViewById(R.id.foodname);
+            fooddesc = (TextView) itemView.findViewById(R.id.fooddesc);
         }
     }
 
-    public SearchAdapter(Context context, ArrayList<String> fullNameList, ArrayList<String> userNameList, ArrayList<String> profilePicList) {
+    public SearchAdapter(Context context, ArrayList<String> foodNameList, ArrayList<String> foodDescList, ArrayList<String> foodImageList) {
         this.context = context;
-        this.fullNameList = fullNameList;
-        this.userNameList = userNameList;
-        this.profilePicList = profilePicList;
+        this.foodNameList = foodNameList;
+        this.foodDescList = foodDescList;
+        this.foodImageList = foodImageList;
     }
 
     @Override
@@ -47,11 +47,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     @Override
     public void onBindViewHolder(SearchViewHolder holder, int position) {
-        holder.full_name.setText(fullNameList.get(position));
-        holder.user_name.setText(userNameList.get(position));
-        Glide.with(context).load(profilePicList.get(position)).asBitmap().placeholder(R.mipmap.ic_launcher_round).into(holder.profileImage);
+        holder.foodname.setText(foodNameList.get(position));
+        holder.fooddesc.setText(foodDescList.get(position));
+        Glide.with(context).load(foodImageList.get(position)).asBitmap().placeholder(R.mipmap.ic_launcher_round).into(holder.foodimage);
 
-        holder.full_name.setOnClickListener(new View.OnClickListener() {
+        holder.foodname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Full Name Clicked", Toast.LENGTH_SHORT).show();
@@ -61,6 +61,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     @Override
     public int getItemCount() {
-        return fullNameList.size();
+        return foodNameList.size();
     }
 }

@@ -7,7 +7,7 @@
     android:padding="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profileImage"
+        android:id="@+id/foodimage"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:padding="2dp"
@@ -23,7 +23,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/full_name"
+            android:id="@+id/foodname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Full name goes here"
@@ -31,7 +31,7 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/user_name"
+            android:id="@+id/fooddesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="User name goes here" />
