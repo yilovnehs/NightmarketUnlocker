@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_nmu"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_nmu_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SigninActivity">
@@ -19,6 +19,7 @@
         <activity android:name=".SearchActivity" android:label="SearchActivity"></activity>
         <activity android:name=".SettingActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".Search2Activity" android:label="Search2Activity"/>
     </application>
 
 </manifest>

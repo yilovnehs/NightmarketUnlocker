@@ -60,6 +60,9 @@ public class SigninActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
+
+
     }
 
     private void signIn() {
@@ -84,7 +87,7 @@ public class SigninActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            startActivity(new Intent(SigninActivity.this, SearchActivity.class));
+            startActivity(new Intent(SigninActivity.this, SettingActivity.class));
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
@@ -99,8 +102,13 @@ public class SigninActivity extends AppCompatActivity {
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account != null) {
-            startActivity(new Intent(SigninActivity.this, SearchActivity.class));
+                startActivity(new Intent(SigninActivity.this, SettingActivity.class));
         }
         super.onStart();
+    }
+
+    public void usedirectly(View view) {
+        //Toast.makeText(getApplicationContext(), "Test OK!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(SigninActivity.this,MainActivity.class));
     }
 }
