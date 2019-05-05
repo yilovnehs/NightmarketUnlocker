@@ -6,6 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,8 +18,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import static android.support.constraint.Constraints.TAG;
 
-public class Search2Activity extends AppCompatActivity {
+
+public class Search2Activity extends AppCompatActivity  { //implements AdapterClass.OnStoreListener
     DatabaseReference ref;
     ArrayList<Stores> list;
     RecyclerView recyclerView;
@@ -59,7 +63,7 @@ public class Search2Activity extends AppCompatActivity {
                         {
                             list.add(ds.getValue(Stores.class));
                         }
-                        AdapterClass adapterClass = new AdapterClass(Search2Activity.this, list);
+                        //AdapterClass adapterClass = new AdapterClass(Search2Activity.this, list, this);
                         recyclerView.setHasFixedSize(true); //add
                         //recyclerView.setLayoutManager(new LinearLayoutManager(this));  //add
                         recyclerView.setAdapter(adapterClass);
@@ -104,7 +108,7 @@ public class Search2Activity extends AppCompatActivity {
             }
         }
 
-        AdapterClass adapterClass = new AdapterClass(Search2Activity.this, myList);
+        //AdapterClass adapterClass = new AdapterClass(Search2Activity.this, myList, this);
         //recyclerView = findViewById(R.id.rv); //add
         recyclerView.setHasFixedSize(true); //add
         //recyclerView.setLayoutManager(new LinearLayoutManager(this));  //add
@@ -114,4 +118,13 @@ public class Search2Activity extends AppCompatActivity {
         recyclerView.setAdapter(adapterClass);
     }
 
+    //@Override
+    public void OnStoreClick(int position) {
+        //list.get(position);
+        //Intent intent = new Intent(getActivity(), MenuFragment.class);
+        //startActivity(intent);
+        Log.d(TAG, "OnStoreClick: clicked");
+    }
 }
+
+

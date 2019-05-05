@@ -17,16 +17,20 @@ import java.util.ArrayList;
 public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder>{
     Context context;
     ArrayList<Stores> list;
+    //private OnStoreListener mOnStoreListener = null;
 
-    public  AdapterClass(Context context, ArrayList<Stores> list){
+    public  AdapterClass(Context context, ArrayList<Stores> list){ //, OnStoreListener onStoreListener
         this.list = list;
         this.context = context;
+        //this.mOnStoreListener = onStoreListener;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_holder,viewGroup,false);
-        return new MyViewHolder(view);
+        MyViewHolder mvh = new MyViewHolder(view);
+        //view.setOnClickListener((View.OnClickListener) this);
+        return mvh; // , mOnStoreListener
     }
 
     @Override
@@ -58,16 +62,33 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
+        // implements View.OnClickListener
         TextView name, desc, storecategoryid;
         ImageView url;
         RatingBar ratingbar;
-        public MyViewHolder(View itemView) {
+        //OnStoreListener onStoreListener;
+
+        public MyViewHolder(View itemView) {  //, OnStoreListener onStoreListener
             super(itemView);
             name = itemView.findViewById(R.id.storeName_text);
             desc = itemView.findViewById(R.id.storeDesc_text);
             url = itemView.findViewById(R.id.storeUrl_text);
             storecategoryid = itemView.findViewById(R.id.storeCategoryId_text);
             ratingbar = itemView.findViewById(R.id.ratingBar);
+            //this.onStoreListener = onStoreListener;
+
+            //itemView.setOnClickListener((View.OnClickListener) this);
         }
+
+/*
+        public void onClick(View v) {
+            onStoreListener.OnStoreClick(getAdapterPosition());
+        }*/
     }
+
+
+    public static interface OnItemClickListener{
+        void OnItemClick(View view, int position);
+    }
+
 }

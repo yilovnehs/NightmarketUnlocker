@@ -1,11 +1,13 @@
 package com.example.nightmarketunlocker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +29,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class SearchFragment extends Fragment {
+import static android.support.constraint.Constraints.TAG;
+
+public class SearchFragment extends Fragment{ // implements AdapterClass.OnStoreListener
 
     DatabaseReference ref;
     ArrayList<Stores> list;
@@ -70,7 +74,7 @@ public class SearchFragment extends Fragment {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if(dataSnapshot.exists())
                     {
-                        list = new ArrayList<>();
+                        ArrayList<Stores> list = new ArrayList<>();
                         for(DataSnapshot ds : dataSnapshot.getChildren())
                         {
                             list.add(ds.getValue(Stores.class));
@@ -129,5 +133,6 @@ public class SearchFragment extends Fragment {
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(adapterClass);
     }
+
 
 }

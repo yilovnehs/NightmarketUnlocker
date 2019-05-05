@@ -20,6 +20,7 @@
         <activity android:name=".SettingActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".Search2Activity" android:label="Search2Activity"/>
+        <activity android:name=".ScrollingActivity" />
     </application>
 
 </manifest>

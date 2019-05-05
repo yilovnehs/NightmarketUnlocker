@@ -1,40 +1,59 @@
 package com.example.nightmarketunlocker;
 
 public class Food {
+    String foodDesc;
+    String foodImage;
+    String foodName;
+    long foodPrice;
 
-    public String foodname, foodimage, fooddesc;
-
-    public Food(){
-
+    public String getFoodDesc() {
+        return foodDesc;
     }
 
-    public String getFoodname() {
-        return foodname;
+    public void setFoodDesc(String foodDesc) {
+        this.foodDesc = foodDesc;
     }
 
-    public void setFoodname(String foodname) {
-        this.foodname = foodname;
+    public String getFoodImage() {
+        return foodImage;
     }
 
-    public String getFoodimage() {
-        return foodimage;
+    public void setFoodImage(String foodImage) {
+        this.foodImage = foodImage;
     }
 
-    public void setFoodimage(String foodimage) {
-        this.foodimage = foodimage;
+    public String getFoodName() {
+        return foodName;
     }
 
-    public String getFooddesc() {
-        return fooddesc;
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
     }
 
-    public void setFooddesc(String fooddesc) {
-        this.fooddesc = fooddesc;
+    public long getFoodPrice() {
+        return foodPrice;
     }
 
-    public Food(String foodname, String foodimage, String fooddesc) {
-        this.foodname = foodname;
-        this.foodimage = foodimage;
-        this.fooddesc = fooddesc;
+    public void setFoodPrice(long foodPrice) {
+        this.foodPrice = foodPrice;
     }
+
+    public long getFoodRate() {
+        return foodRate;
+    }
+
+    public void setFoodRate(long foodRate) {
+        this.foodRate = foodRate;
+    }
+
+    public long getFoodStore() {
+        return foodStore;
+    }
+
+    public void setFoodStore(long foodStore) {
+        this.foodStore = foodStore;
+    }
+
+    long foodRate;
+    long foodStore;
 }
