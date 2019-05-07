@@ -31,10 +31,15 @@ import java.util.ArrayList;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class SearchFragment extends Fragment{ // implements AdapterClass.OnStoreListener
+public class SearchFragment extends Fragment implements AdapterClass.OnItemClickListener { // implements AdapterClass.OnStoreListener
+
+    public static final String EXTRA_FOODDESC = "foodDesc";
+    public static final String EXTRA_FOODIMAGE = "foodImage";
+    public static final String EXTRA_FOODNAME = "foodName";
 
     DatabaseReference ref;
     ArrayList<Stores> list;
+    ArrayList<Food> foodlist;
     RecyclerView recyclerView;
     SearchView searchView;
     AdapterClass adapterClass;
@@ -83,6 +88,7 @@ public class SearchFragment extends Fragment{ // implements AdapterClass.OnStore
                         recyclerView.setHasFixedSize(true); //add
                         //recyclerView.setLayoutManager(new LinearLayoutManager(this));  //add
                         recyclerView.setAdapter(adapterClass);
+                        adapterClass.setOnItemClickListener(SearchFragment.this);
                     }
                 }
 
@@ -132,7 +138,26 @@ public class SearchFragment extends Fragment{ // implements AdapterClass.OnStore
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(adapterClass);
+        adapterClass.setOnItemClickListener(SearchFragment.this);
     }
 
 
+    @Override
+    public void onItemClick(int position) {
+        Intent detailIntent = new Intent(getActivity(), ScrollingActivity.class);
+        //Stores clickedItem = list.get(position);
+
+        //new一個Bundle物件，並將要傳遞的資料傳入
+        //Bundle bundle = new Bundle();
+        //bundle.putDouble("height",height );
+        //bundle.putString("sex", sex);
+
+        //將Bundle物件assign給intent
+        //detailIntent.putExtras(bundle);
+
+
+        Toast.makeText(getActivity(),"Successfully Clicked" + position,Toast.LENGTH_SHORT).show();
+
+        startActivity(detailIntent);
+    }
 }

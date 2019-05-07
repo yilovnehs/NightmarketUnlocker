@@ -11,7 +11,7 @@
         android:layout_width="182dp"
         android:layout_height="33dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
         android:text="请为店家评分"
@@ -22,54 +22,44 @@
 
     <RatingBar
         android:id="@+id/ratingBar3"
+        style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="84dp"
         android:isIndicator="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="210dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="128dp"
+        android:layout_width="196dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginRight="136dp"
         android:ems="10"
         android:inputType="textMultiLine"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="56dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="8dp"
-        android:text="评论 :"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Write your comments" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="86dp"
-        android:layout_height="wrap_content"
+        android:layout_width="83dp"
+        android:layout_height="32dp"
         android:layout_marginStart="160dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="8dp"
         android:background="@color/colorPrimary"
-        android:text="发送"
+        android:text="SEND"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.816"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

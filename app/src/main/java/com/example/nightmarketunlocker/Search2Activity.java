@@ -1,5 +1,6 @@
 package com.example.nightmarketunlocker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -108,7 +109,7 @@ public class Search2Activity extends AppCompatActivity  { //implements AdapterCl
             }
         }
 
-        //AdapterClass adapterClass = new AdapterClass(Search2Activity.this, myList, this);
+        AdapterClass adapterClass = new AdapterClass(Search2Activity.this, myList);
         //recyclerView = findViewById(R.id.rv); //add
         recyclerView.setHasFixedSize(true); //add
         //recyclerView.setLayoutManager(new LinearLayoutManager(this));  //add
@@ -116,6 +117,7 @@ public class Search2Activity extends AppCompatActivity  { //implements AdapterCl
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(adapterClass);
+        //AdapterClass.setOnItemClickListener(Search2Activity.this);
     }
 
     //@Override
@@ -124,6 +126,19 @@ public class Search2Activity extends AppCompatActivity  { //implements AdapterCl
         //Intent intent = new Intent(getActivity(), MenuFragment.class);
         //startActivity(intent);
         Log.d(TAG, "OnStoreClick: clicked");
+    }
+
+    //@Override
+    public void onItemClick(int position) {
+        Intent detailIntent = new Intent(Search2Activity.this, ScrollingActivity.class);
+        Stores clickedItem = list.get(position);
+
+        //detailIntent.putExtra(EXTRA_URL, clickedItem.getImageUrl());
+        //detailIntent.putExtra(EXTRA_CREATOR, clickedItem.getCreator());
+        //detailIntent.putExtra(EXTRA_LIKES, clickedItem.getLikeCount());
+        Toast.makeText(Search2Activity.this,"Successfully Clicked",Toast.LENGTH_SHORT).show();
+
+        startActivity(detailIntent);
     }
 }
 

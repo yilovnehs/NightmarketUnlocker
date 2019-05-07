@@ -27,7 +27,7 @@ public class ScrollingActivity extends AppCompatActivity {
     private DatabaseReference myRef1;
 
     List<Fragment> fragments;
-    String[] titles = new String[]{"菜单","评论"};
+    String[] titles = new String[]{"Menu","Reviews"};
 
 
     @Override

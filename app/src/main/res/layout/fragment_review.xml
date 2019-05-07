@@ -13,14 +13,14 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="186dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="155dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="416dp"
-        android:text="Button" />
+        android:layout_marginStart="117dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="627dp"
+        android:text="Write a reivew" />
 
 </RelativeLayout>

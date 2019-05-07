@@ -51,7 +51,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar"
                     style="@style/RatingBar_CustomColor"
-
+                    android:theme="@style/RatingBar"
                     android:layout_width="170dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="20dp"
