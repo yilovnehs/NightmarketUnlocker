@@ -12,4 +12,8 @@
     <string name="see_all">查看全部</string>
     <string name="phone_wallet">手機錢包</string>
     <string name="top_up">充值</string>
+    <style name="search">搜尋</style>
+    <string name="slanguage">請選擇語言</string>
+    <string name="usedirectly">直接使用</string>
+    <string name="writereview">留言</string>
 </resources>

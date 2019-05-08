@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NightMarketUnlocker</string>
+    <string name="slanguage">Please choose your language</string>
+    <string name="usedirectly">Use Directly</string>
+    <string name="writereview">Write a review</string>
+</resources>

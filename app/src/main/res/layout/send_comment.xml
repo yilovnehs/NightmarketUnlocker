@@ -56,10 +56,18 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="168dp"
         android:layout_marginEnd="8dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button_normal"
         android:text="SEND"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.816"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/shape_rectangle"></View>
+
+
 </android.support.constraint.ConstraintLayout>

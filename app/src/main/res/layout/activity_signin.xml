@@ -28,7 +28,7 @@
         android:layout_height="19dp"
         android:layout_marginBottom="32dp"
         android:onClick="usedirectly"
-        android:text="Use Directly"
+        android:text="@string/usedirectly"
         android:textColor="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

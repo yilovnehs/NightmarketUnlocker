@@ -16,11 +16,13 @@ import android.content.Context;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder>{
     Context context;
     ArrayList<Stores> list;
-    private OnItemClickListener mListener = null;
+    private OnItemClickListener mListener;
+    Locale locale = Locale.getDefault();
 
 
     //define interface
@@ -49,8 +51,20 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
 
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {  //i = position
-        myViewHolder.name.setText(list.get(i).getStoreName());
-        myViewHolder.desc.setText(list.get(i).getStoreDesc());
+        //myViewHolder.name.setText(list.get(i).getStoreName());
+        //myViewHolder.desc.setText(list.get(i).getStoreDesc());
+
+        //add
+        if (locale.equals(Locale.JAPAN)) {
+            // 日本語環境
+            myViewHolder.name.setText(list.get(i).getStoreNameJPN());
+            myViewHolder.desc.setText(list.get(i).getStoreDesc());
+        } else {
+            // その他の言語環境
+            myViewHolder.name.setText(list.get(i).getStoreName());
+            myViewHolder.desc.setText(list.get(i).getStoreDesc());
+        }
+
         Glide.with(context)
                 .load(list.get(i).getStoreUrl())
                 .asBitmap()
@@ -93,6 +107,7 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
             storecategoryid = itemView.findViewById(R.id.storeCategoryId_text);
             ratingbar = itemView.findViewById(R.id.ratingBar);
 
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -102,7 +117,6 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
                             mListener.onItemClick(position);
                         }
                     }
-                    //Toast.makeText(v.getContext(),"click " +getAdapterPosition(),Toast.LENGTH_SHORT).show();
                 }
             });
         }

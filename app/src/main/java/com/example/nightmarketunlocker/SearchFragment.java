@@ -33,9 +33,10 @@ import static android.support.constraint.Constraints.TAG;
 
 public class SearchFragment extends Fragment implements AdapterClass.OnItemClickListener { // implements AdapterClass.OnStoreListener
 
-    public static final String EXTRA_FOODDESC = "foodDesc";
-    public static final String EXTRA_FOODIMAGE = "foodImage";
-    public static final String EXTRA_FOODNAME = "foodName";
+    public static final String EXTRA_STOREID = "storeId";
+    public static final String EXTRA_STORENAME = "storeName";
+    public static final String EXTRA_STORERATE = "storeRate";
+    public static final String EXTRA_STOREURL = "storeUrl";
 
     DatabaseReference ref;
     ArrayList<Stores> list;
@@ -79,7 +80,7 @@ public class SearchFragment extends Fragment implements AdapterClass.OnItemClick
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if(dataSnapshot.exists())
                     {
-                        ArrayList<Stores> list = new ArrayList<>();
+                        list = new ArrayList<>();
                         for(DataSnapshot ds : dataSnapshot.getChildren())
                         {
                             list.add(ds.getValue(Stores.class));
@@ -145,11 +146,17 @@ public class SearchFragment extends Fragment implements AdapterClass.OnItemClick
     @Override
     public void onItemClick(int position) {
         Intent detailIntent = new Intent(getActivity(), ScrollingActivity.class);
-        //Stores clickedItem = list.get(position);
+        //ArrayList<Stores> myList = new ArrayList<>();
+        Stores clickedItem = list.get(position);
+
+        detailIntent.putExtra(EXTRA_STOREID, clickedItem.getStoreId());
+        detailIntent.putExtra(EXTRA_STORENAME, clickedItem.getStoreName());
+        detailIntent.putExtra(EXTRA_STORERATE, clickedItem.getStoreRate());
+        detailIntent.putExtra(EXTRA_STOREURL, clickedItem.getStoreUrl());
 
         //new一個Bundle物件，並將要傳遞的資料傳入
         //Bundle bundle = new Bundle();
-        //bundle.putDouble("height",height );
+        //bundle.putString("storename",list.get(position).getStoreName());
         //bundle.putString("sex", sex);
 
         //將Bundle物件assign給intent

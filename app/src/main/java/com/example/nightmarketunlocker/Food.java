@@ -4,7 +4,39 @@ public class Food {
     String foodDesc;
     String foodImage;
     String foodName;
+    String foodNameJPN;
+    String foodDescJPN;
     long foodPrice;
+
+    public Food() {
+    }
+
+    public Food(String foodDesc, String foodImage, String foodName, String foodNameJPN, String foodDescJPN, long foodPrice, long foodRate, long foodStore) {
+        this.foodDesc = foodDesc;
+        this.foodImage = foodImage;
+        this.foodName = foodName;
+        this.foodNameJPN = foodNameJPN;
+        this.foodDescJPN = foodDescJPN;
+        this.foodPrice = foodPrice;
+        this.foodRate = foodRate;
+        this.foodStore = foodStore;
+    }
+
+    public String getFoodNameJPN() {
+        return foodNameJPN;
+    }
+
+    public void setFoodNameJPN(String foodNameJPN) {
+        this.foodNameJPN = foodNameJPN;
+    }
+
+    public String getFoodDescJPN() {
+        return foodDescJPN;
+    }
+
+    public void setFoodDescJPN(String foodDescJPN) {
+        this.foodDescJPN = foodDescJPN;
+    }
 
     public String getFoodDesc() {
         return foodDesc;

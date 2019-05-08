@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MenuFragment extends Fragment {
     ListView lstPrefer;
@@ -35,6 +36,8 @@ public class MenuFragment extends Fragment {
     // String[] name= new String[] {"臭豆腐","臭豆腐2","臭豆腐3","臭豆腐4"};
     //String[] description = { "臭豆腐好吃", "臭豆腐好吃哈哈","臭豆腐好吃嘻嘻","hah"};
     //String[] price ={"5","6","7","7"};
+
+    Locale locale = Locale.getDefault();
 
     @Nullable
     @Override
@@ -60,8 +63,23 @@ public class MenuFragment extends Fragment {
                         name.add(food.getFoodName());
                         description.add(food.getFoodDesc());
                         price.add(String.valueOf(food.getFoodPrice()));
-                        adapter.notifyDataSetChanged();
+                        //adapter.notifyDataSetChanged();
 
+                        /*
+                        //add 20190508 by yi
+                        //change language
+                        if (locale.equals(Locale.JAPAN)) {
+                            // Japanese
+                            name.add(food.getFoodNameJPN());
+                            description.add(food.getFoodDescJPN());
+                            //adapter.notifyDataSetChanged();
+                        } else if(locale.equals((Locale.ENGLISH))) {
+                            // English
+                            name.add(food.getFoodName());
+                            description.add(food.getFoodDesc());
+                            //adapter.notifyDataSetChanged();
+                        }*/
+                        adapter.notifyDataSetChanged();
                     }
 
                 }
@@ -114,7 +132,9 @@ public class MenuFragment extends Fragment {
             txtName.setText(name.get(position));
             //或 txtName.setText(""+getItem(position));
             txtengName.setText(description.get(position));
-            txtprice.setText(price.get(position));
+            txtprice.setText("NTD "+price.get(position));
+
+
 
             return convertView;
         }
