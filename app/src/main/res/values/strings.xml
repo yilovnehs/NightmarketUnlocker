@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">nightmarketunlocker</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_home">首頁</string>
+    <string name="title_category">夜市店家</string>
+    <string name="title_cart">我的收藏</string>
+    <string name="title_my">用戶詳情</string>
+    <string name="my_comment">我的評論</string>
+    <string name="see_all">查看全部</string>
+    <string name="phone_wallet">手機錢包</string>
+    <string name="top_up">充值</string>
+    <style name="search">搜尋</style>
+    <string name="slanguage">請選擇語言</string>
+    <string name="usedirectly">直接使用</string>
+    <string name="writereview">留言</string>
+</resources>
